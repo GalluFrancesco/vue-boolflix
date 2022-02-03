@@ -1,15 +1,20 @@
 <template>
     <main>
         <!-- test per verificare il funzionamento -->
+        <card-movie v-for="movie in movies"
+        :key="movie.id" 
+        :movie="movie"/>
 
-        <!-- <div v-for="movie in movies"
-        :key="movie.id">
-        {{movie.title}}</div> -->
     </main>
 </template>
 
 <script>
+import CardMovie from '../components/CardMovie.vue'
 export default {
+    components: {
+        CardMovie
+
+    },
     props:{
         movies:Array
     }
