@@ -5,7 +5,9 @@
         </div>
         <p><b>Titolo:</b> {{movie.title}}</p>
         <p><b>Titolo originale:</b> {{movie.original_title}}</p>
-        <p><b>Lingua:</b> {{movie.original_language}}</p>
+        <p class="box-language"><b>Lingua:</b>
+            <img class="flag" :src="`/flags/${movie.original_language}.png`" alt="">
+        </p>
         <p><b>Voto:</b> {{movie.vote_average}}</p>
     </div>
 </template>
@@ -27,7 +29,6 @@ export default {
         height: 450px;
         margin: 20px 20px;
         padding: 40px 10px;
-        font-size: 25px;
         position: relative;
         
         .box-img{
@@ -47,7 +48,19 @@ export default {
             }
         }
         p{
-           line-height: 35px;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 35px;
+            font-size: 20px;
+
+            
+        }
+        .box-language{
+            display: flex;
+            align-items: center;
+        
+            .flag{
+                height: 25px ;
+            }
         }
         
     }
