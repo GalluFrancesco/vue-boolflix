@@ -1,17 +1,22 @@
 <template>
   <div id="app">
-     
+     <header-box @search="getMovies"/>
+     <main-box :movies="filteredMovies"/>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import HeaderBox from './components/HeaderBox.vue'
+import MainBox from './components/MainBox.vue'
 
 
 export default {
   name: 'App',
   components: {
-    
+    HeaderBox,
+    MainBox,
+
   },
   data(){
     return{
