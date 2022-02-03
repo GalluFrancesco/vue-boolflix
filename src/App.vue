@@ -34,5 +34,10 @@ export default {
 </script>
 
 <style lang="scss">
-
+@import './style/main.scss';
+  #app{
+    background-color: #434343;
+    width: 100%;
+    min-height: 100vh;
+  }
 </style>

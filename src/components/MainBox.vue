@@ -23,4 +23,12 @@ export default {
 
 <style lang="scss" scoped>
 
+main{  
+    display: flex;
+    flex-wrap: wrap;
+    width: 1360px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
 </style>
