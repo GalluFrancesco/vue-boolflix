@@ -3,19 +3,43 @@
         <div class="box-img">
             <img :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"/>
         </div>
-        <p><b>Titolo:</b> {{movie.title}}</p>
-        <p><b>Titolo originale:</b> {{movie.original_title}}</p>
-        <p class="box-language"><b>Lingua:</b>
-            <img class="flag" :src="`/flags/${movie.original_language}.png`" alt="">
-        </p>
-        <p><b>Voto:</b> {{movie.vote_average}}</p>
+        <div class="txt"><b>Titolo:</b> {{movie.title}}</div>
+        <div class="txt"><b>Titolo originale:</b> {{movie.original_title}}</div>
+        <div class="box-language txt"><b>Lingua:</b>
+            <img 
+            v-if="languages.includes(movie.original_language)"
+            class="flag" 
+            :src="`/flags/${movie.original_language}.png`"/>
+            <div v-else>{{ movie.original_language }}</div>
+        </div>
+        <div class="txt"><b>Voto: </b>
+            <span v-for="n in 5" :key="n">
+                <i v-if="ratingToStars(n,movie.vote_average)" class="fas fa-star yellow"></i>
+                <i v-else class="far fa-star"></i>
+            </span>
+        </div>
     </div>
 </template>
 
 <script>
 export default {
+    data() {
+        return {
+        languages: ["en", "it", "ja", "fr", "es", "zh", "de"],
+        };
+    },
     props:{
         movie: Object
+    },
+    methods:{
+        ratingToStars(n, vote){
+            //farò un v-for che ciclerà n volte(5)
+            //all'interno metterò un v-if che utilizzerà questa funzione
+            //quindi se sarà true stamperà una stella piena
+            //v-else stella vuota
+            return n <= Math.round(vote / 2);
+        }
+        
     }
 }
 </script>
@@ -47,7 +71,7 @@ export default {
                 display: none;
             }
         }
-        p{
+        .txt{
             font-family: Arial, Helvetica, sans-serif;
             line-height: 35px;
             font-size: 20px;
@@ -60,7 +84,12 @@ export default {
         
             .flag{
                 height: 25px ;
+                margin-left: 5px;
             }
+        }
+
+        .yellow{
+            color: yellow;
         }
         
     }
