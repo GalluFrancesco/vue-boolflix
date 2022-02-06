@@ -3,3 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.movies-box{ 
+    display: flex;
+    flex-wrap: wrap;
+    width: 1360px;
+    margin: 0 auto;
+    padding: 40px 0;  
+}
