@@ -3,8 +3,14 @@
         <div class="box-img">
             <img :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path"/>
         </div>
-        <div class="txt"><b>Titolo:</b> {{movie.title}}</div>
-        <div class="txt"><b>Titolo originale:</b> {{movie.original_title}}</div>
+        <div class="txt"><b>Titolo:</b> 
+            <span v-if="movie.title">{{movie.title}}</span>
+            <span v-else>{{movie.name}}</span>
+        </div>
+        <div class="txt"><b>Titolo originale:</b>
+            <span v-if="movie.original_title">{{movie.original_title}}</span>
+            <span v-else>{{movie.original_name}}</span>
+        </div>
         <div class="box-language txt"><b>Lingua:</b>
             <img 
             v-if="languages.includes(movie.original_language)"

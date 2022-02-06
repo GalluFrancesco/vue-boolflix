@@ -1,8 +1,8 @@
 <template>
-    <div class="movies-box">
+    <div class="series-box">
         <card-movie v-for="serie in series"
         :key="serie.id" 
-        :movie="movie"/>
+        :movie="serie"/>
     </div>
 </template>
 

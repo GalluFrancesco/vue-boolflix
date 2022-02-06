@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 
-.movies-box{ 
+.movies-box,
+.series-box{ 
     display: flex;
     flex-wrap: wrap;
     width: 1360px;
