@@ -2,19 +2,21 @@
     <main>
         <!-- test per verificare il funzionamento -->
         <movies-box :movies="movies" />
-
+        <tv-series-box :series="series" />
     </main>
 </template>
 
 <script>
-import MoviesBox from '../components/MoviesBox.vue'
+import MoviesBox from './MoviesBox.vue'
+import TvSeriesBox from './TvSeriesBox.vue'
 export default {
     components: {
-        MoviesBox
-
+        MoviesBox,
+        TvSeriesBox
     },
     props:{
-        movies:Array
+        movies:Array,
+        series:Array
     }
 }
 </script>
