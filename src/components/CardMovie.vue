@@ -62,7 +62,7 @@ export default {
         position: relative;
         
         .box-img{
-            height: 450px;
+            height: 448px;
             width: 298px;
             position: absolute;
             top: 0;
@@ -70,6 +70,7 @@ export default {
 
             img{
                 width: 100%;
+                height: 100%;
                 object-fit: cover;
             }
 
